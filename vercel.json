@@ -1,0 +1,22 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/contact(.*)",
+      "destination": "/api/contact"
+    },
+    {
+      "source": "/api/application(.*)",
+      "destination": "/api/application"
+    }
+  ],
+  "env": {
+    "SUPABASE_URL": "@supabase_url",
+    "SUPABASE_ANON_KEY": "@supabase_anon_key",
+    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key"
+  },
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs20.x"
+    }
+  }
+}

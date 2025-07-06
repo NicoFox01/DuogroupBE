@@ -1,0 +1,31 @@
+{
+  "name": "duogroupbe",
+  "version": "1.0.0",
+  "description": "Backend for Duogroup project, deployed on Vercel.",
+  "main": "api/index.ts",
+  "scripts": {
+    "start": "tsx api/index.ts",
+    "dev": "vercel dev",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vercel",
+    "supabase",
+    "typescript",
+    "backend"
+  ],
+  "author": "Your Name Here",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.3",
+    "@vercel/node": "^5.3.3",
+    "supabase": "^2.30.4",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10"
+  }
+}
