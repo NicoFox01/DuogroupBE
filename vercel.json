@@ -1,17 +1,21 @@
 {
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/api/contact(.*)",
-      "destination": "/api/contact"
-    },
-    {
-      "source": "/api/application(.*)",
-      "destination": "/api/application"
+      "src": "api/**/*.ts",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "swagger-output.json"
+        ]
+      }
     }
   ],
-  "env": {
-    "SUPABASE_URL": "SUPABASE_URL",
-    "SUPABASE_ANON_KEY": "SUPABASE_ANON_KEY",
-    "SUPABASE_SERVICE_ROLE_KEY": "SUPABASE_SERVICE_ROLE_KEY"
-  }
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1.ts"
+    }
+  ],
+  "buildCommand": "npm run generate-swagger && npm run build"
 }
